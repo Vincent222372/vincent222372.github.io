@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FashionHub — Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="left">
+          <span onclick="location.href='index.html'" class="brand" style="cursor:pointer; text-decoration:none; color:inherit; border: 2px solid white; padding: 5px; background-color: white;">
+            Fashion<span style="color:#000000">Hub</span>
+          </span>
+        </div>
+        <div class="nav-links">
+          <button class="ghost" onclick="location.href='login.html'">Login</button>
+          <button class="ghost active">Register</button>
+          <button class="ghost" onclick="location.href='profile.html'">Profile</button>
+          <button class="ghost" onclick="location.href='cart.html'">My Cart (<span id="cart-count">0</span>)</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="auth-section">
+      <h1>Create an Account</h1>
+      <form id="registerForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> FashionHub — All rights reserved</div>
+    <div class="container">
+    <div class="contact-info">
+      <p><strong>Address:</strong> 123 Fashion Street, New York, NY 10001</p>
+      <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+      <p><strong>Email:</strong> support@fashionhub.com</p>
+    </div>
+    <p class="copyright">© <span id="year"></span> FashionHub — All rights reserved</p>
+  </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+      if (!name || !email || !password || !confirmPassword) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters long.');
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return;
+      }
+
+      alert('Registration successful!');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

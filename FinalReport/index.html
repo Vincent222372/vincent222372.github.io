@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FashionHub — Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="left">
+          <span onclick="location.href='index.html'" class="brand">
+            Fashion<span style="color:#000000">Hub</span>
+          </span>
+        </div>
+        <div class="nav-links">
+          <button class="ghost" onclick="location.href='login.html'">Login</button>
+          <button class="ghost" onclick="location.href='register.html'">Register</button>
+          <button class="ghost" onclick="location.href='profile.html'">Profile</button>
+          <button class="ghost" onclick="location.href='mycart.html'">My Cart (<span id="cart-count">0</span>)</button>
+          <button class="ghost" onclick="location.href='contact.html'">Contact</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Welcome to FashionHub</h1>
+      <p>Your one-stop shop for the latest trends in men's and women's fashion.</p>
+      <div style="margin-top:20px;">
+        <button class="btn" onclick="location.href='men.html'">Shop Men's Clothes</button>
+        <button class="btn" onclick="location.href='women.html'">Shop Women's Clothes</button>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <h2>Featured Products</h2>
+      <div class="product-list">
+        <div class="product">
+          <img src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/aa7154e2-eafb-4df8-a0cd-b0707a790a95/M+J+ESS+HBR+WOVEN+JKT.png" alt="Men's Jacket">
+          <h3>Men's Jacket</h3>
+          <p>$50</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="https://shop.mango.com/assets/rcs/pics/static/T8/fotos/S/87082889_50.jpg?imwidth=2048&imdensity=1&ts=1730387015350" alt="Men's Shirt">
+          <h3>Men's Shirt</h3>
+          <p>$35</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="https://assets.aritzia.com/image/upload/c_crop,ar_1920:2623,g_south/q_auto,f_auto,dpr_auto/f25_a08_123046_1086_on_b" alt="Women's Dress">
+          <h3>Women's Dress</h3>
+          <p>$70</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLiE4TCijDRjMJ1rvpaoJxxRI5RDq-MBdegw&s" alt="Women's Blouse">
+          <h3>Women's Blouse</h3>
+          <p>$40</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="contact-info">
+        <p><strong>Address:</strong> 123 Fashion Street, New York, NY 10001</p>
+        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+        <p><strong>Email:</strong> support@fashionhub.com</p>
+      </div>
+      <p class="copyright">© <span id="year"></span> FashionHub — All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

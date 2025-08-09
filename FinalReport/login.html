@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FashionHub — Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="left">
+          <span onclick="location.href='index.html'" class="brand" style="cursor:pointer; text-decoration:none; color:inherit; border: 2px solid white; padding: 5px; background-color: white;">
+            Fashion<span style="color:#000000">Hub</span>
+          </span>
+        </div>
+        <div class="nav-links">
+          <button class="ghost active">Login</button>
+          <button class="ghost" onclick="location.href='register.html'">Register</button>
+          <button class="ghost" onclick="location.href='profile.html'">Profile</button>
+          <button class="ghost" onclick="location.href='cart.html'">My Cart (<span id="cart-count">0</span>)</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="auth-section">
+      <h1>Login to Your Account</h1>
+      <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> FashionHub — All rights reserved</div>
+    <div class="container">
+    <div class="contact-info">
+      <p><strong>Address:</strong> 123 Fashion Street, New York, NY 10001</p>
+      <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+      <p><strong>Email:</strong> support@fashionhub.com</p>
+    </div>
+    <p class="copyright">© <span id="year"></span> FashionHub — All rights reserved</p>
+  </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (email === '' || password === '') {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters long.');
+        return;
+      }
+
+      alert('Login successful!');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

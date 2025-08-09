@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FashionHub — Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="left">
+          <span onclick="location.href='index.html'" class="brand" style="cursor:pointer; text-decoration:none; color:inherit; border: 2px solid white; padding: 5px; background-color: white;">
+            Fashion<span style="color:#000000">Hub</span>
+          </span>
+        </div>
+        <div class="nav-links">
+          <button class="ghost" onclick="location.href='login.html'">Login</button>
+          <button class="ghost" onclick="location.href='register.html'">Register</button>
+          <button class="ghost active">Profile</button>
+          <button class="ghost" onclick="location.href='cart.html'">My Cart (<span id="cart-count">0</span>)</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="profile-section">
+      <h1>My Profile</h1>
+      <div class="profile-card">
+        <img src="https://variety.com/wp-content/uploads/2020/12/Dwayne_Johnson.png?w=970&h=563&crop=1" alt="Profile Picture" class="profile-pic">
+        <h2 id="profileName">John Doe</h2>
+        <p id="profileEmail">dwaynejohnson@superstar.com</p>
+        <button class="btn" onclick="editProfile()">Edit Profile</button>
+      </div>
+
+      <div class="profile-details">
+        <h3>Account Information</h3>
+        <ul>
+          <li><strong>Full Name:</strong> <span id="fullName">Dwayne Johnson</span></li>
+          <li><strong>Email:</strong> <span id="email">dwaynejohnson@superstar.com</span></li>
+          <li><strong>Member Since:</strong> <span id="memberSince">January 2024</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> FashionHub — All rights reserved</div>
+    <div class="container">
+    <div class="contact-info">
+      <p><strong>Address:</strong> 123 Fashion Street, New York, NY 10001</p>
+      <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+      <p><strong>Email:</strong> support@fashionhub.com</p>
+    </div>
+    <p class="copyright">© <span id="year"></span> FashionHub — All rights reserved</p>
+  </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function editProfile() {
+      alert('Edit profile feature coming soon!');
+    }
+  </script>
+</body>
+</html>

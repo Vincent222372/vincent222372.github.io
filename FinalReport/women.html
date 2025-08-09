@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FashionHub — Women's Clothes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="left">
+          <span onclick="location.href='index.html'" class="brand" style="cursor:pointer; text-decoration:none; color:inherit; border: 2px solid white; padding: 5px; background-color: white;">
+    Fashion<span style="color:#000000">Hub</span>
+          </span>
+        </div>
+        <div class="nav-links">
+          <button class="ghost" onclick="location.href='men.html'">Men's Clothes</button>
+          <button class="ghost active" onclick="location.href='women.html'">Women's Clothes</button>
+          <button class="ghost" onclick="location.href='login.html'">Login</button>
+          <button class="ghost" onclick="location.href='register.html'">Register</button>
+          <button class="ghost" onclick="location.href='profile.html'">Profile</button>
+          <button class="ghost" onclick="location.href='mycart.html'">My Cart (<span id="cart-count">0</span>)</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Women's Clothes</h1>
+      <p>Discover the latest trends in women's fashion — from elegant dresses to stylish tops.</p>
+    </section>
+
+    <section class="product-section">
+      <h2>Women's Collection</h2>
+      <div class="product-list">
+        <div class="product">
+          <img src="https://assets.aritzia.com/image/upload/c_crop,ar_1920:2623,g_south/q_auto,f_auto,dpr_auto/f25_a08_123046_1086_on_b" alt="Women's Dress">
+          <h3>Women's Dress</h3>
+          <p>$70</p>
+          <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="https://shop.mango.com/assets/rcs/pics/static/T7/fotos/S/77049057_05.jpg?imwidth=2048&imdensity=1&ts=1728650060781" alt="Women's Blouse">
+          <h3>Women's Blouse</h3>
+          <p>$40</p>
+          <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="https://media.cos.com/assets/001/f1/30/f1306e5c8ec7482af5fc46df49ab5c0965b9e684_xxl-1.jpg?imwidth=2160" alt="Women's Skirt">
+          <h3>Women's Skirt</h3>
+          <p>$45</p>
+          <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZdXmPsQKV75V82zywudIB9tGsTvU2Regdw&s" alt="Women's Jacket">
+          <h3>Women's Jacket</h3>
+          <p>$85</p>
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> FashionHub — All rights reserved</div>
+    <div class="container">
+    <div class="contact-info">
+      <p><strong>Address:</strong> 123 Fashion Street, New York, NY 10001</p>
+      <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+      <p><strong>Email:</strong> support@fashionhub.com</p>
+    </div>
+    <p class="copyright">© <span id="year"></span> FashionHub — All rights reserved</p>
+  </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

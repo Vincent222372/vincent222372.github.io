@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FashionHub — My Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="left">
+          <span onclick="location.href='index.html'" class="brand" style="cursor:pointer; text-decoration:none; color:inherit; border: 2px solid white; padding: 5px; background-color: white;">
+            Fashion<span style="color:#000000">Hub</span>
+          </span>
+        </div>
+        <div class="nav-links">
+          <button class="ghost" onclick="location.href='login.html'">Login</button>
+          <button class="ghost" onclick="location.href='register.html'">Register</button>
+          <button class="ghost" onclick="location.href='profile.html'">Profile</button>
+          <button class="ghost active">My Cart (<span id="cart-count">0</span>)</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="cart-section">
+      <h1>My Shopping Cart</h1>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <tr>
+            <td>Men's Jacket</td>
+            <td>$50</td>
+            <td><input type="number" value="1" min="1" onchange="updateTotal(this)"></td>
+            <td class="item-total">$50</td>
+            <td><button class="btn" onclick="removeItem(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td>Women's Dress</td>
+            <td>$70</td>
+            <td><input type="number" value="1" min="1" onchange="updateTotal(this)"></td>
+            <td class="item-total">$70</td>
+            <td><button class="btn" onclick="removeItem(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cart-summary">
+        <h3>Cart Summary</h3>
+        <p><strong>Grand Total:</strong> $<span id="grand-total">120</span></p>
+        <button class="btn">Proceed to Checkout</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> FashionHub — All rights reserved</div>
+    <div class="container">
+    <div class="contact-info">
+      <p><strong>Address:</strong> 123 Fashion Street, New York, NY 10001</p>
+      <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+      <p><strong>Email:</strong> support@fashionhub.com</p>
+    </div>
+    <p class="copyright">© <span id="year"></span> FashionHub — All rights reserved</p>
+  </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function updateTotal(input) {
+      const row = input.closest('tr');
+      const price = parseFloat(row.cells[1].textContent.replace('$', ''));
+      const quantity = parseInt(input.value);
+      const total = price * quantity;
+      row.querySelector('.item-total').textContent = `$${total}`;
+      updateGrandTotal();
+    }
+
+    function removeItem(button) {
+      const row = button.closest('tr');
+      row.remove();
+      updateGrandTotal();
+    }
+
+    function updateGrandTotal() {
+      let grandTotal = 0;
+      document.querySelectorAll('.item-total').forEach(cell => {
+        grandTotal += parseFloat(cell.textContent.replace('$', ''));
+      });
+      document.getElementById('grand-total').textContent = grandTotal;
+      document.getElementById('cart-count').textContent = document.querySelectorAll('#cart-items tr').length;
+    }
+  </script>
+</body>
+</html>
